@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "962306729253",
+    "project_id": "pixelpower2024-f1349",
+    "storage_bucket": "pixelpower2024-f1349.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:962306729253:android:e41eb45b278cf2cd1626cc",
+        "android_client_info": {
+          "package_name": "com.example.pixelpower2024"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAc_oaUukgR8sbYqcYI85w1f47m9L9kBss"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
