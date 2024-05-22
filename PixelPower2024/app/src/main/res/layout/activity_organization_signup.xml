@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@drawable/fundal"
-    tools:context=".SignupActivity">
+    tools:context=".OrganizationSignupActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Sign Up User"
+                android:text="Sign Up Organization"
                 android:textAlignment="center"
                 android:textColor="@color/fundal"
                 android:textSize="36sp"
