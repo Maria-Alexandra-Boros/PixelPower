@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DetailsActivity"
-    android:background="@drawable/gradient_galben_roz">
+    android:background="@drawable/fundalnou">
 
     <ImageView
         android:id="@+id/detailImage"
@@ -19,7 +19,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/detailImage"
-        android:padding="16dp"
+        android:padding="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
         android:textSize="20dp"
         android:background="@drawable/rounded_background"/>
+
+    <Button
+        android:id="@+id/involvedButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="600dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/fundalalb"
+        android:backgroundTint="@color/fundal"
+        android:text="Get involved!"
+        android:textSize="18sp"
+
+        />
+
 </RelativeLayout>

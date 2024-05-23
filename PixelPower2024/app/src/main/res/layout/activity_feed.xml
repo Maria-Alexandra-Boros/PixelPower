@@ -6,21 +6,6 @@
     tools:context=".FeedActivity"
     android:background="@drawable/gradient_galben_roz">
 
-
-    <SearchView
-        android:id="@+id/searchView"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="30dp"
-        android:layout_weight="1"
-        android:background="@android:color/transparent"
-        android:iconifiedByDefault="false"
-        android:inputType="text"
-        android:queryHint="Search" />
-
     <ImageButton
         android:id="@+id/profileButton"
         android:layout_width="wrap_content"
@@ -32,7 +17,19 @@
         android:src="@drawable/baseline_person_24"
         android:contentDescription="Profile" />
 
-
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:iconifiedByDefault="false"
+        android:inputType="text"
+        android:queryHint="Search" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -51,8 +48,8 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="30dp"
             android:layout_weight="1"
-            android:background="@color/design_default_color_primary"
             android:text="ONG"
+            android:background="@drawable/fundalalb"
             android:textColor="#FFFFFF"
             android:textSize="16sp" />
 
@@ -62,8 +59,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
-            android:background="@color/design_default_color_primary"
             android:text="Event"
+            android:background="@drawable/fundalalb"
             android:textColor="#FFFFFF"
             android:textSize="16sp" />
     </LinearLayout>
@@ -76,10 +73,10 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="170dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="-20dp"
         android:horizontalSpacing="10dp"
         android:numColumns="1"
         android:padding="10dp"
