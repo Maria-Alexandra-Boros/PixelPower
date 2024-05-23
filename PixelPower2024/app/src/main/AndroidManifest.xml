@@ -28,7 +28,7 @@
             android:name=".WelcomeActivity"
             android:exported="false" />
         <activity
-            android:name=".EditProfile"
+            android:name=".EditProfileActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
