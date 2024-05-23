@@ -12,7 +12,7 @@
         android:layout_height="200dp"
         android:scaleType="centerCrop"
         android:layout_alignParentTop="true"
-        android:background="@drawable/fundalalb"/>
+        android:background="@drawable/rounded_background"/>
 
     <TextView
         android:id="@+id/detailText"
@@ -20,5 +20,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/detailImage"
         android:padding="16dp"
-        android:textSize="20dp"/>
+        android:textSize="20dp"
+        android:background="@drawable/rounded_background"/>
 </RelativeLayout>
