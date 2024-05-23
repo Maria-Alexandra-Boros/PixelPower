@@ -3,14 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailsActivity">
+    tools:context=".DetailsActivity"
+    android:background="@drawable/gradient_galben_roz">
 
     <ImageView
         android:id="@+id/detailImage"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:scaleType="centerCrop"
-        android:layout_alignParentTop="true"/>
+        android:layout_alignParentTop="true"
+        android:background="@drawable/fundalalb"/>
 
     <TextView
         android:id="@+id/detailText"
@@ -18,5 +20,5 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/detailImage"
         android:padding="16dp"
-        android:textSize="16sp"/>
+        android:textSize="20dp"/>
 </RelativeLayout>
