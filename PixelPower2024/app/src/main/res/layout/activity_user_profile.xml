@@ -1,0 +1,100 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/fundalnou">
+
+    <ImageView
+        android:id="@+id/pfp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/pfp"
+        android:scaleType="centerCrop"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:elevation="4dp"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pfp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Michelle Smith"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:fontFamily="sans-serif-medium" />
+
+    <TextView
+        android:id="@+id/bioTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nameTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="Doresc sa ajut oameni"
+        android:textSize="30sp"
+        android:textColor="#666666"
+        android:fontFamily="sans-serif" />
+
+    <LinearLayout
+        android:id="@+id/statisticsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bioTextView"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/listingsCountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="353 LISTINGS"
+            android:textSize="16sp"
+            android:textColor="#444444"
+            android:fontFamily="sans-serif-medium" />
+
+        <TextView
+            android:id="@+id/followersCountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="1250 FOLLOWERS"
+            android:textSize="16sp"
+            android:textColor="#444444"
+            android:fontFamily="sans-serif-medium" />
+
+        <TextView
+            android:id="@+id/eventCountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="3 PARTICIPATIONS"
+            android:textSize="16sp"
+            android:textColor="#444444"
+            android:fontFamily="sans-serif-medium" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/followButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/statisticsLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="FOLLOW +"
+        android:textSize="16sp"
+        android:backgroundTint="#007BFF"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif-medium"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:elevation="4dp" />
+</RelativeLayout>

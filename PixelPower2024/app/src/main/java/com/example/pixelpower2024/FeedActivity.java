@@ -9,6 +9,9 @@ import android.widget.ImageButton;
 import android.widget.SearchView;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FeedActivity extends AppCompatActivity {
 
     ImageButton profileButton;
@@ -17,27 +20,34 @@ public class FeedActivity extends AppCompatActivity {
     GridView gridView;
     SearchView searchView;
     GridAdapter adapter;
-    String[] orgNames = {"Org 1", "Org 2", "Org 3", "Org 4","Org 5"};
-    int[] orgImages = {R.drawable.org1, R.drawable.org2, R.drawable.org3, R.drawable.org4,R.drawable.org5};
+    List<EventDetails> events;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed);
+
         ongButton = findViewById(R.id.ongButton);
-        eventButton=findViewById(R.id.eventButton);
-        profileButton=findViewById(R.id.profileButton);
+        eventButton = findViewById(R.id.eventButton);
+        profileButton = findViewById(R.id.profileButton);
         gridView = findViewById(R.id.gridView);
         searchView = findViewById(R.id.searchView);
-        adapter = new GridAdapter(this, orgNames, orgImages);
+
+        // Initialize event data
+        events = new ArrayList<>();
+        events.add(new EventDetails("Org 1", R.drawable.org1, "Date 1", "$10", "ofmaria ce sa fac"));
+        events.add(new EventDetails("Org 2", R.drawable.org2, "Date 2", "$20", "e foarte greu"));
+        events.add(new EventDetails("Org 3", R.drawable.org3, "Date 3", "$30", "schimba astea cu textu"));
+        events.add(new EventDetails("Org 4", R.drawable.org4, "Date 4", "$40", "si ca sa schimbi ce mai vrei"));
+        events.add(new EventDetails("Org 5", R.drawable.org5, "Date 5", "$50", "gen adaugi etc schimbi in detailsactivity"));
+
+        adapter = new GridAdapter(this, events);
         gridView.setAdapter(adapter);
 
         gridView.setOnItemClickListener((parent, view, position, id) -> {
-            String selectedOrgName = adapter.getFilteredOrgNames()[position];
-            int selectedOrgImage = adapter.getFilteredOrgImages()[position];
+            EventDetails selectedEvent = (EventDetails) adapter.getItem(position);
             Intent intent = new Intent(FeedActivity.this, DetailsActivity.class);
-            intent.putExtra("name", selectedOrgName);
-            intent.putExtra("image", selectedOrgImage);
+            intent.putExtra("event", selectedEvent);
             startActivity(intent);
         });
 
@@ -53,6 +63,7 @@ public class FeedActivity extends AppCompatActivity {
                 return true;
             }
         });
+
         ongButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,6 +71,7 @@ public class FeedActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         eventButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,10 +79,11 @@ public class FeedActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-       profileButton.setOnClickListener(new View.OnClickListener() {
+
+        profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FeedActivity.this, EditProfileActivity.class);
+                Intent intent = new Intent(FeedActivity.this, UserProfileActivity.class);
                 startActivity(intent);
             }
         });

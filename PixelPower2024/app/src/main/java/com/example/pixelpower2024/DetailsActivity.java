@@ -10,12 +10,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.database.FirebaseDatabase;
-
 public class DetailsActivity extends AppCompatActivity {
 
     ImageView detailImage;
     TextView detailText;
+    TextView detailDate;
+    TextView detailPrice;
+    TextView detailDescription;
     Button involvedButton;
 
     @Override
@@ -25,26 +26,28 @@ public class DetailsActivity extends AppCompatActivity {
 
         detailImage = findViewById(R.id.detailImage);
         detailText = findViewById(R.id.detailText);
+        detailDate = findViewById(R.id.detailDate);
+        detailPrice = findViewById(R.id.detailPrice);
+        detailDescription = findViewById(R.id.detailDescription);
         involvedButton = findViewById(R.id.involvedButton);
 
-        String name = getIntent().getStringExtra("name");
-        int image = getIntent().getIntExtra("image", 0);
+        EventDetails event = (EventDetails) getIntent().getSerializableExtra("event");
 
-        detailImage.setImageResource(image);
-        detailText.setText(name + "\n\nDate: TBD\nPrice: Free\nLocation: Various");
+        if (event != null) {
+            detailImage.setImageResource(event.getImageResourceId());
+            detailText.setText(event.getName());
+            detailDate.setText("Date: " + event.getDate());
+            detailPrice.setText("Price: " + event.getPrice());
+            detailDescription.setText("Description: " + event.getDescription());
+        }
 
-        involvedButton.setOnClickListener(new View.OnClickListener()
-        {
+        involvedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Toast.makeText(DetailsActivity.this, "You have signup successfully!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DetailsActivity.this, "You have signed up successfully!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(DetailsActivity.this, FeedActivity.class);
                 startActivity(intent);
             }
         });
-
     }
-
-
 }

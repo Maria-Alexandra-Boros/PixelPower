@@ -1,44 +1,44 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailsActivity"
-    android:background="@drawable/fundalnou">
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <ImageView
         android:id="@+id/detailImage"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:scaleType="centerCrop"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/rounded_background"/>
+        android:scaleType="centerCrop" />
 
     <TextView
         android:id="@+id/detailText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/detailImage"
-        android:padding="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp"
-        android:textSize="20dp"
-        android:background="@drawable/rounded_background"/>
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:paddingTop="8dp" />
+
+    <TextView
+        android:id="@+id/detailDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp" />
+
+    <TextView
+        android:id="@+id/detailPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp" />
+
+    <TextView
+        android:id="@+id/detailDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp" />
 
     <Button
         android:id="@+id/involvedButton"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:padding="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="600dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/fundalalb"
-        android:backgroundTint="@color/fundal"
-        android:text="Get involved!"
-        android:textSize="18sp"
-
-        />
-
-</RelativeLayout>
+        android:layout_height="wrap_content"
+        android:text="Get Involved" />
+</LinearLayout>

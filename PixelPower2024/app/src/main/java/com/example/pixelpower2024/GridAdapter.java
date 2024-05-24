@@ -1,4 +1,5 @@
 package com.example.pixelpower2024;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,32 +15,28 @@ import java.util.List;
 
 public class GridAdapter extends BaseAdapter implements Filterable {
     private Context context;
-    private final String[] originalOrgNames;
-    private final int[] originalOrgImages;
-    private String[] filteredOrgNames;
-    private int[] filteredOrgImages;
+    private final List<EventDetails> originalEvents;
+    private List<EventDetails> filteredEvents;
 
-    public GridAdapter(Context context, String[] orgNames, int[] orgImages) {
+    public GridAdapter(Context context, List<EventDetails> events) {
         this.context = context;
-        this.originalOrgNames = orgNames;
-        this.originalOrgImages = orgImages;
-        this.filteredOrgNames = orgNames;
-        this.filteredOrgImages = orgImages;
+        this.originalEvents = events;
+        this.filteredEvents = events;
     }
 
     @Override
     public int getCount() {
-        return filteredOrgNames.length;
+        return filteredEvents.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return filteredEvents.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override
@@ -51,8 +48,9 @@ public class GridAdapter extends BaseAdapter implements Filterable {
         TextView textView = convertView.findViewById(R.id.text);
         ImageView imageView = convertView.findViewById(R.id.image);
 
-        textView.setText(filteredOrgNames[position]);
-        imageView.setImageResource(filteredOrgImages[position]);
+        EventDetails event = filteredEvents.get(position);
+        textView.setText(event.getName());
+        imageView.setImageResource(event.getImageResourceId());
 
         return convertView;
     }
@@ -64,47 +62,31 @@ public class GridAdapter extends BaseAdapter implements Filterable {
             protected FilterResults performFiltering(CharSequence constraint) {
                 FilterResults results = new FilterResults();
                 if (constraint == null || constraint.length() == 0) {
-                    results.values = originalOrgNames;
-                    results.count = originalOrgNames.length;
-
-                    filteredOrgImages = originalOrgImages;
+                    results.values = originalEvents;
+                    results.count = originalEvents.size();
                 } else {
-                    List<String> filteredNamesList = new ArrayList<>();
-                    List<Integer> filteredImagesList = new ArrayList<>();
-
-                    for (int i = 0; i < originalOrgNames.length; i++) {
-                        if (originalOrgNames[i].toLowerCase().contains(constraint.toString().toLowerCase())) {
-                            filteredNamesList.add(originalOrgNames[i]);
-                            filteredImagesList.add(originalOrgImages[i]);
+                    List<EventDetails> filteredList = new ArrayList<>();
+                    for (EventDetails event : originalEvents) {
+                        if (event.getName().toLowerCase().contains(constraint.toString().toLowerCase())) {
+                            filteredList.add(event);
                         }
                     }
-
-                    filteredOrgNames = filteredNamesList.toArray(new String[0]);
-                    filteredOrgImages = new int[filteredImagesList.size()];
-                    for (int i = 0; i < filteredImagesList.size(); i++) {
-                        filteredOrgImages[i] = filteredImagesList.get(i);
-                    }
-
-                    results.values = filteredOrgNames;
-                    results.count = filteredOrgNames.length;
+                    results.values = filteredList;
+                    results.count = filteredList.size();
                 }
                 return results;
             }
 
             @Override
             protected void publishResults(CharSequence constraint, FilterResults results) {
-                filteredOrgNames = (String[]) results.values;
+                filteredEvents = (List<EventDetails>) results.values;
                 notifyDataSetChanged();
             }
         };
     }
 
-    // Public getter methods to access the filtered data
-    public String[] getFilteredOrgNames() {
-        return filteredOrgNames;
-    }
-
-    public int[] getFilteredOrgImages() {
-        return filteredOrgImages;
+    // Getter method to access filtered events
+    public List<EventDetails> getFilteredEvents() {
+        return filteredEvents;
     }
 }
