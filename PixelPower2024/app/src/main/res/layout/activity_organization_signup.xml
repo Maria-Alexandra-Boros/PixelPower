@@ -84,6 +84,17 @@
                 android:padding="8dp"
                 android:textColor="@color/black" />
 
+
+            <Button
+                android:id="@+id/add_files_button"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/fundal"
+                android:text="Add Legal Documents"
+                android:textSize="18sp"
+                android:onClick="openFilePicker"
+                app:cornerRadius="20dp" />
             <Button
                 android:id="@+id/signup_button"
                 android:layout_width="match_parent"
