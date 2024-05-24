@@ -21,23 +21,23 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Objects;
 
-public class LoginActivity extends AppCompatActivity {
+public class OngLoginActivity extends AppCompatActivity {
 
 
     EditText loginUsername, loginPassword;
     Button loginButton;
-    TextView signupRedirectText, ongSignupRedirectText;
+    TextView signupRedirectText, userSignupRedirectText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_ong_login);
 
         loginUsername = findViewById(R.id.login_username);
         loginPassword = findViewById(R.id.login_password);
         loginButton = findViewById(R.id.login_button);
         signupRedirectText = findViewById(R.id.signupRedirectText);
-        ongSignupRedirectText = findViewById(R.id.ongSignupRedirectText);
+        userSignupRedirectText = findViewById(R.id.userSignupRedirectText);
 
 
 
@@ -55,14 +55,14 @@ public class LoginActivity extends AppCompatActivity {
         signupRedirectText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, RegisterTypeActivity.class);
+                Intent intent = new Intent(OngLoginActivity.this, RegisterTypeActivity.class);
                 startActivity(intent);
             }
         });
-        ongSignupRedirectText.setOnClickListener(new View.OnClickListener() {
+        userSignupRedirectText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, OngLoginActivity.class);
+                Intent intent = new Intent(OngLoginActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
@@ -115,7 +115,7 @@ public class LoginActivity extends AppCompatActivity {
                         String emailFromDB = snapshot.child(userUsername).child("email").getValue(String.class);
                         String usernameFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
 
-                        Intent intent = new Intent(LoginActivity.this, FeedActivity.class);
+                        Intent intent = new Intent(OngLoginActivity.this, OrganizationFeedActivity.class);
 
                         intent.putExtra("name", nameFromDB);
                         intent.putExtra("email", emailFromDB);
