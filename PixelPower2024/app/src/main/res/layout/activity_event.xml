@@ -7,7 +7,7 @@
     android:background="@drawable/gradient_galben_roz">
 
     <ImageButton
-        android:id="@+id/profileButton"
+        android:id="@+id/profileEventButton"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_alignParentEnd="true"
@@ -18,7 +18,7 @@
         android:contentDescription="Profile" />
 
     <SearchView
-        android:id="@+id/searchView"
+        android:id="@+id/searchEventView"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -46,7 +46,7 @@
     </LinearLayout>
 
     <GridView
-        android:id="@+id/gridView"
+        android:id="@+id/gridEventView"
         android:layout_width="400dp"
         android:layout_height="600dp"
         android:layout_alignParentStart="true"

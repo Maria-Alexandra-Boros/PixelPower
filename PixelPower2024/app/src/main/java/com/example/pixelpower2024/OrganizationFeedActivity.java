@@ -17,6 +17,9 @@ public class OrganizationFeedActivity extends AppCompatActivity {
     ImageButton profileButton;
    Button participantsButton;
     GridView gridView;
+
+    Button payButton;
+
     SearchView searchView;
     GridAdapter adapter;
     List<EventDetails> events;
@@ -70,6 +73,15 @@ public class OrganizationFeedActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        payButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(OrganizationFeedActivity.this, PayActivity.class);
+                startActivity(intent);
+            }
+        });
+
         participantsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

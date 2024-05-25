@@ -44,6 +44,15 @@ public class EditProfileActivity extends AppCompatActivity {
                 }
             }
         });
+
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(EditProfileActivity.this, FeedActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private boolean isNameChanged() {

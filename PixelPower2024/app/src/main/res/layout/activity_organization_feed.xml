@@ -48,26 +48,37 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="20dp"
             android:layout_weight="1"
+            android:layout_marginStart="20dp"
             android:background="@drawable/fundalalb"
-            android:text="Participants"
+            android:text="CURRENT MEMBERS"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/payButton"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/fundalalb"
+            android:text="HOST EVENT"
             android:textColor="#FFFFFF"
             android:textSize="16sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="30dp"
-
+            android:layout_marginStart="20dp"
             android:layout_marginLeft="0dp"
+
+            android:layout_marginEnd="20dp"
             android:text="Your other events:"
             android:textColor="@color/fundal"
             android:textSize="36sp"
             android:textStyle="bold" />
 
     </LinearLayout>
-
-
 
 
     <GridView
@@ -79,7 +90,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="270dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="-20dp"
         android:horizontalSpacing="10dp"

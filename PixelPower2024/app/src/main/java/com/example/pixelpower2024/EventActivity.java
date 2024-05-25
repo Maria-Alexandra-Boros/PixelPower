@@ -25,16 +25,17 @@ public class EventActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event);
-        profileButton = findViewById(R.id.profileButton);
-        gridView = findViewById(R.id.gridView);
-        searchView = findViewById(R.id.searchView);
+        profileButton = findViewById(R.id.profileEventButton);
+        gridView = findViewById(R.id.gridEventView);
+        searchView = findViewById(R.id.searchEventView);
 
         // Initialize event data
         events = new ArrayList<>();
 
-        events.add(new EventDetails("Org 2", R.drawable.org2, "Date 2", "$20", "e foarte greu"));
+        events.add(new EventDetails("Fund Raising Marathon", R.drawable.org2, "1.06.2024", "minimum donation: 5€", "The Run for Bright Futures Fundraising Marathon is a vibrant and inclusive event designed to support gifted students who face financial barriers in continuing their education. This marathon aims to raise funds to provide these talented students with essential materials such as textbooks, school supplies, laptops, and other educational resources."));
+        events.add(new EventDetails("Voluntary work at the „VA Urechia” Library Galați", R.drawable.org4, "24.06.2024 - 20.09.2024", "any monetary or material donation", "Volunteering at the Biblioteca Județeană „VA Urechia” Galați offers a rewarding opportunity to support the local library's mission of providing educational resources, cultural enrichment, and community services. Volunteers play a crucial role in enhancing the library’s operations, programs, and outreach efforts, helping to make the library a welcoming and accessible place for all members of the community."));
+        events.add(new EventDetails("Danube River Shore and Promenade Cleaning Event",R.drawable.org1,"8.06.2024","3€ fee that will go to purchasing new equipment for the park near the promenade","The Danube River Shore and Promenade Cleaning Event is a community-driven initiative aimed at preserving the natural beauty and ecological integrity of the Danube River and its surrounding areas. Organized by local environmental groups, community organizations, and concerned citizens, this event brings together volunteers of all ages to participate in a collective effort to clean up litter and debris along the river shore and promenade."));
 
-        events.add(new EventDetails("Org 4", R.drawable.org4, "Date 4", "$40", "si ca sa schimbi ce mai vrei"));
 
 
         adapter = new GridAdapter(this, events);
