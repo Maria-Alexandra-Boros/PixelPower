@@ -32,7 +32,8 @@
                 android:textAlignment="center"
                 android:textColor="@color/fundal"
                 android:textSize="30dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"/>
 
             <EditText
                 android:id="@+id/signup_name"
@@ -50,7 +51,7 @@
                 android:id="@+id/signup_email"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/fundalalb"
                 android:drawableLeft="@drawable/baseline_email_24"
                 android:drawablePadding="8dp"
@@ -89,9 +90,19 @@
                 android:id="@+id/add_files_button"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:backgroundTint="@color/fundal"
                 android:text="Add Legal Documents"
+                android:textSize="18sp"
+                android:onClick="openFilePicker"
+                app:cornerRadius="20dp" />
+            <Button
+                android:id="@+id/signupPayButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="0dp"
+                android:backgroundTint="@color/fundal"
+                android:text="Pay to sign up"
                 android:textSize="18sp"
                 android:onClick="openFilePicker"
                 app:cornerRadius="20dp" />
@@ -99,7 +110,7 @@
                 android:id="@+id/signup_button"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="0dp"
                 android:backgroundTint="@color/fundal"
                 android:text="Sign Up"
                 android:textSize="18sp"

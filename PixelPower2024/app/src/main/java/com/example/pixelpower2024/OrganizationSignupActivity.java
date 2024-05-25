@@ -29,7 +29,7 @@ public class OrganizationSignupActivity extends AppCompatActivity {
 
     EditText signupName, signupUsername, signupEmail, signupPassword;
     TextView loginRedirectText;
-    Button signupButton, addFilesButton;
+    Button signupButton, addFilesButton,signupPayButton;
     List<Uri> selectedFiles = new ArrayList<>();
     FirebaseDatabase database;
     DatabaseReference reference;
@@ -44,6 +44,7 @@ public class OrganizationSignupActivity extends AppCompatActivity {
         signupPassword = findViewById(R.id.signup_password);
         loginRedirectText = findViewById(R.id.loginRedirectText);
         signupButton = findViewById(R.id.signup_button);
+        signupPayButton=findViewById(R.id.signupPayButton);
 
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +71,13 @@ public class OrganizationSignupActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(OrganizationSignupActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+        signupPayButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(OrganizationSignupActivity.this,SignupPay.class);
                 startActivity(intent);
             }
         });

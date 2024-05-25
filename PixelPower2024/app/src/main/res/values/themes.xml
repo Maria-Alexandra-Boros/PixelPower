@@ -5,4 +5,6 @@
         <item name="colorPrimary">@color/fundal</item>
         name="Theme.PixelPower2024" parent="Base.Theme.PixelPower2024"
     </style>
+
+    <style name="Theme.PixelPower2024" parent="Base.Theme.PixelPower2024" />
 </resources>
