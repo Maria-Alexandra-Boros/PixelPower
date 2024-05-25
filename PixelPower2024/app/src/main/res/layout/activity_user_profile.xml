@@ -79,7 +79,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="4 FOLLOWERS"
+                    android:text="0 FOLLOWERS"
                     android:textSize="12sp"
                     android:textColor="#444444"
                     android:fontFamily="sans-serif-medium" />

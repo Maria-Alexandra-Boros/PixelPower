@@ -62,7 +62,7 @@ public class OrganizationSignupActivity extends AppCompatActivity {
                 reference.child(username).setValue(helperClass);
 
                 Toast.makeText(OrganizationSignupActivity.this, "You have signup successfully!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(OrganizationSignupActivity.this, LoginActivity.class);
+                Intent intent = new Intent(OrganizationSignupActivity.this, OngLoginActivity.class);
                 startActivity(intent);
             }
         });
